@@ -1,0 +1,16 @@
+services:
+  dev-oblinor-db:
+    image: postgres:latest
+    container_name: dev-oblinor-db
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: oblinor
+    ports:
+      - 4040:5432
+    networks:
+      - dev-oblinor
+
+networks:
+  dev-oblinor:
+    driver: bridge

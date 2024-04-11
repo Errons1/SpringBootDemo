@@ -1,0 +1,28 @@
+services:
+  staging-oblinor-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: staging-oblinor-server
+    depends_on:
+      - staging-oblinor-db
+    ports:
+      - 9090:9090
+    networks:
+      - staging-oblinor
+
+  staging-oblinor-db:
+    image: postgres:latest
+    container_name: staging-oblinor-db
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: oblinor
+    ports:
+      - 5050:5432
+    networks:
+      - staging-oblinor
+
+networks:
+  staging-oblinor:
+    driver: bridge

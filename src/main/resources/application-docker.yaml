@@ -1,0 +1,13 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: OblinorDemo
+  datasource:
+    url: jdbc:postgresql://staging-oblinor-db/oblinor
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true

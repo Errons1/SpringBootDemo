@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: OblinorDemo    
+  datasource:
+    url: jdbc:postgresql://localhost:4040/oblinor
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    
+
+#springdoc:
+#  swagger-ui:
+#    path: /
